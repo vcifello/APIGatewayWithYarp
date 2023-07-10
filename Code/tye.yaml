@@ -1,0 +1,28 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: apigatewaywithyarp
+services:
+- name: foodservice
+  project: FoodService/FoodService.csproj
+  bindings:
+  - port: 5011
+    protocol: https
+- name: drinkservice
+  project: DrinkService/DrinkService.csproj
+  bindings:
+  - port: 5021
+    protocol: https
+- name: client
+  project: Client/Client.csproj
+  bindings:
+  - port: 7096
+    protocol: https
+- name: gateway
+  project: Gateway/Gateway.csproj
+  bindings:
+  - port: 5101
+    protocol: https
