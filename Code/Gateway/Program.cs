@@ -1,4 +1,5 @@
 //  ~\Gateway\Program.cs
+//using Microsoft.AspNetCore.Builder;
 var builder = WebApplication.CreateBuilder(args);
 
 var proxyBuilder = builder.Services.AddReverseProxy();
@@ -13,6 +14,11 @@ if (!app.Environment.IsDevelopment())
 	app.UseExceptionHandler("/Error");
 	app.UseHsts();
 }
+
+app.UseBlazorFrameworkFiles();
+app.MapFallbackToFile("index.html");
+//app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseRouting();
 

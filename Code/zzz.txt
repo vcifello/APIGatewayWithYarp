@@ -1,2 +1,6 @@
+
+https://tanzu.vmware.com/developer/blog/build-api-gateway-csharp-yarp/
+
+
 - name: gateway
   project: Gateway/Gateway.csproj
